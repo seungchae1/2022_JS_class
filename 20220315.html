@@ -1,0 +1,111 @@
+<script type="text/javascript">
+/*
+if(0) alert("Hello");
+if("") alert("Hello");
+if(null) alert("Hello");
+if(undefined) alert("Hello");
+if(NaN) alert("Hello");*/
+
+/*
+//let user = {name : "John"};
+let user;
+
+if(user){
+	alert('Hello ${user.name}');
+}
+else{
+	alert("사용자가 없군요");
+}
+
+let result = 10 > 5 ? "Hello" : "World";
+
+let a1 = !!"non-empty string";
+let a2 = !!null; //!(!null) => !(!false) => !true => false (boolean으로 변환)
+
+*/
+//for(let i=0; i<=5; i++){
+//	alert(i);	
+//}
+
+/*
+function showMessage() {
+	//함수 내부에서 사용할 지역 변수 선언
+	let message = "Hello";
+	//함수 내부에서만 사용 가능
+	alert(message):
+
+showMessage();
+*/
+/*
+let userName = 'John';
+function showMessage(){
+	let message = 'Hello, '+userName;
+	alert(message);
+	userName = "Bob";
+}
+showMessage();
+alert(userName);
+*/
+
+/*
+function showMessage(from, text){
+	alert(from + ': '+text);
+}*/
+//showMessage('Ann', 'Hello');
+//showMessage('Ann');
+//showMessage();
+//showMessage('Ann', 'Hello', 'World');
+
+/*
+function showMessage(from, text = "non text given"){
+	alert(from + ': '+text);
+}*/
+
+/*
+function sum(a,b){
+	retrun a+b;
+}
+let r = sum(4,5);
+
+function doNothing(){
+	//retrun;
+}
+
+let r2= doNothing();
+//r2? --> undefined
+
+let r3 = alert('Hello');
+//r3 => undefined라면 alert 함수는 리턴값이 없다(o)
+*/
+
+//이름이 없는 익명 함수를 sayHi라는 변수에 대입한 것.
+let sayHi = function(){
+	alert("Hello");
+};
+
+sayHi();
+
+let sum = function(a,b){
+	return a + b;
+};
+
+let sumAB = sum(5,6);
+alert(sumAB);
+
+let func = sayHi;
+func();
+
+function ask(question, yes, no) {
+if (confirm(question)) yes()
+else no();
+}
+function showOk() {
+alert( "동의하셨습니다." );
+}
+function showCancel() {
+alert( "취소 버튼을 누르셨습니다." );
+}
+// 사용법: 함수 showOk와 showCancel가 ask 함수의 인수로 전달됨
+ask("동의하십니까?", showOk, showCancel);
+
+</script>
