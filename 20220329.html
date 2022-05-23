@@ -1,0 +1,222 @@
+<script type="text/javascript">
+	//let user={};
+
+	//console.log(user.noSuchProp);
+
+	//let user={name: "John"};
+	//console.log("name" in user); //ture
+	//console.log("asdf" in user); //false
+
+/*
+	let user = {
+    name: "John",
+    age: 30,
+    isAdmin: true
+	};
+
+	for (let key in user) { 
+    // key 변수에는 "name", "age", "isAdmin"이 순차적으로 대입됨
+		console.log(key);
+		console.log(user[key]);
+	}
+*/
+/*
+	let message = "Hello!";
+	// 원시값 대입으로 인하여 값의 복사가 발생
+	let phrase = message;
+	phrase="Bye!";
+
+	let user={
+		name:"John"
+	};
+
+	let admin =user;
+	admin.name="Ken";
+	console.log(user.name);
+
+	function changeName(user){
+		//원본 객체에 영향을 끼침
+		user.name="pete";
+	}
+
+	changeName(admin);
+
+	console.log(user.name); //"Pete"
+*/
+
+/*
+let a = {};
+let b = a;
+
+//같은 객체를 가리키고 있기 때문에
+console.log( a == b ); // true
+console.log( a === b ); // true
+
+let c={};
+let d={};
+console.log( c === d ); // false
+console.log( {} === {} ); // false
+
+*/
+
+/*
+//copy 함수 만들
+//copy 함수로 전달된 객체를 복사한 객체를 반환하는 함수 작성
+//1.copy함수 내부에서 빈 객체 생성
+//2.전달받은 (복사할)객체를 for-in 반복문으로 모든 속성값에 접근하여 1에서 생성한 객체에 내용 복사
+//3.1에서 생성한 객체 반환
+
+function copy(a){
+	let b={};
+	for (let key in a){
+		b[key]=a[key];
+	}
+	return b;
+}
+
+let a={
+	name:"John",
+	age:18
+}
+
+//shallow copy
+let c = a;
+//deep copy
+let b=copy(a);
+
+console.log(a);
+console.log(b);
+
+console.log(a === b); //false
+b.name = "Ken";
+console.log(a.name); //"John"
+*/
+
+/*
+let user={
+	name:"John",
+	age:30,
+
+	// 속성 정의하며 곧바로 메소드 정의
+	sayHi : function(){
+		alert("안녕하세요!");
+	}
+
+    // 단축 구문 이용하여 메소드 정의
+	sayHi(){
+		alert("안녕하세요!");
+	}
+};
+
+// 함수 선언
+function sayHi() {
+    alert("안녕하세요!");
+};
+
+// 선언된 함수를 메서드로 등록
+user.sayHi = sayHi
+
+// sayHi 속성에 함수 할당 (=> 메소드 정의)
+user.sayHi=function {
+	alert("안녕하세요!");
+}
+*/
+
+/*
+let user={
+	name:"John",
+	age:30,
+	sayHi(){
+		alert(this.name);
+	}
+}
+
+user.sayHi();
+*/
+
+/*
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+    alert( this.name );
+}
+
+user.f = sayHi;
+admin.f = sayHi;
+
+user.f();
+admin.f();
+*/
+
+/*
+"use strict" //엄격모드
+
+function sayHi() {
+    alert( this.name );
+}
+
+sayHi();
+*/
+
+/*
+"use strict"
+
+let obj = {
+    x: 100,
+    logThis() {
+        console.log(this);
+    }
+};
+obj.logThis(); // { x: 100 }
+
+let another = { y: 200 };
+another.logThis = obj.logThis;
+another.logThis(); // { y: 200 }
+
+let logThis = another.logThis;
+logThis(); // Window 객체 (엄격 모드가 적용된 경우 undefined)
+
+let o = {
+    inner: {
+        z: 300
+    }
+};
+
+o.inner.logThis = obj.logThis;
+// 여기서 점 앞의 객체는 o가 아닌 inner임을 유의
+o.inner.logThis() // { z: 300 }
+*/
+
+/*
+//생성자 함수
+function User(name) {
+	//this = {}
+	this.name = name;
+    this.isAdmin = false;
+    //return this
+}
+
+let u = new User("John");
+*/
+
+//01) 학생을 생성할 수 있는 생성자 함수 정의
+//이름, 나이, 성별, 학번을 전달받아서 객체를 생성하는 역할을 함
+//02) new 연산자를 이용하여 객체 생성해보기
+
+function Student(name, age, gender, num){
+	this.name=name;
+	this.age=age;
+	this.gender=gender;
+	this.num=num;
+	this.sayHi=function(){
+		alert("My name is : "+this.name);
+	}
+}
+
+let st1=new Student("박승채", 18, "여", "2208");
+
+console.log(st1);
+st1.sayHi();
+
+</script>
