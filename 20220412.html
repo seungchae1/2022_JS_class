@@ -1,0 +1,55 @@
+<script type="text/javascript">
+	/*
+	for(let i=1; i<44032; i++){
+		console.log(String.fromCodePoint(i));
+	}
+	*/
+	/*
+	let users=[
+	{id:1,name:"syoen",age:18},
+	{id:2,name:"sheong",age:18},
+	{id:3,name:"gouk",age:18}
+	];
+
+	//let someUsers=users.filter(item=>item.id < 3);
+	let someUsers=users.filter(function(user){
+		return user.id < 3;
+	});
+	console.log(someUsers);
+
+	someUsers.forEach(function(user){
+		console.log(user.name);
+	})
+	*/
+
+	let arr=[1,2,3];
+	for(let item of arr){
+		console.log(item);
+	}
+
+	arr.forEach(function(item, idx){	//순회
+		console.log(item, idx);
+	});
+
+	let f = arr.filter(function(item){	//필터링
+		return (item%2)===0;
+	});
+	console.log(f);
+
+	let t=arr.map(function(item){		//요소 변형
+		return item*2;
+	});
+	console.log(t);
+
+	let users = [
+    {id: 1, name: "John"},
+    {id: 2, name: "Pete"},
+    {id: 3, name: "Mary"}
+	];
+
+	let names=users.map(function(user){
+		return user.name;
+	});
+	console.log(names);
+
+</script>
