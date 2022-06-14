@@ -37,7 +37,7 @@ let user={
 }
 	console.log(user.isMinor());
 	user.speakName(2);
-*/
+
 
 // 다음의 생성자 함수를 작성
 let p = new Point(2,3);
@@ -59,6 +59,52 @@ function User(id, name, age){
 	this.isMinor= function(){
 		if(this.age<20) return true;
 		else return false;
+	}
+}
+*/
+
+// Bank 생성자 함수 정의
+let bank=new Bank();
+bank.deposit(1000);
+bank.deposit(2000);
+let b1=bank.getBalance();
+console.log(b1); //3000
+let r1=bank.withdraw(1000);
+console.log(r1); //1000
+let b2=bank.getBalance();
+console.log(b2);//2000
+let r2=bank.withdraw(5000);
+console.log(r2);//2000
+console.log(bank.getBalance());//0
+
+/*
+function Bank(balance=0){
+	this.deposit=function(money){
+		balance+=money;
+	}
+	this.withdraw=function(money){
+		if(money>balance) money=balance;
+		balance-=money;
+		return money;
+	}
+	this.getBalance=function(){
+		return balance;
+	}
+}
+*/
+
+function Bank(){
+	this.balance=0;
+	this.deposit=function(money){
+		this.balance+=money;
+	}
+	this.withdraw=function(money){
+		if(money>this.balance) money=this.balance;
+		this.balance-=money;
+		return money;
+	}
+	this.getBalance=function(){
+		return this.balance;
 	}
 }
 
