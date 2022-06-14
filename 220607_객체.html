@@ -1,4 +1,5 @@
 <script type="text/javascript">
+//1
 	/*
 	const user={id:1, name:"John", age:20};
 	//메서드 추가
@@ -16,6 +17,7 @@
 	console.log(user.isMinor());
 	user.speakName(2);
 
+//2
 // user객체를 다시 정의
 // 메서드 정의시
 // 리터럴 형식으로 정의, is Mimor 메서드를 리터럴 형식으로
@@ -39,6 +41,7 @@ let user={
 	user.speakName(2);
 
 
+//3
 // 다음의 생성자 함수를 작성
 let p = new Point(2,3);
 console.log(p); // { x: 2, y: 3}
@@ -61,8 +64,8 @@ function User(id, name, age){
 		else return false;
 	}
 }
-*/
 
+//4
 // Bank 생성자 함수 정의
 let bank=new Bank();
 bank.deposit(1000);
@@ -78,6 +81,9 @@ console.log(r2);//2000
 console.log(bank.getBalance());//0
 
 /*
+//클로저 함수
+//balance라는 속성은 만들어지지 않고 
+//직접적으로 접근하지 못하게 함(private같은 효과)
 function Bank(balance=0){
 	this.deposit=function(money){
 		balance+=money;
@@ -92,7 +98,7 @@ function Bank(balance=0){
 	}
 }
 */
-
+/*
 function Bank(){
 	this.balance=0;
 	this.deposit=function(money){
@@ -106,6 +112,24 @@ function Bank(){
 	this.getBalance=function(){
 		return this.balance;
 	}
+}
+*/
+
+//5
+let summary = getSummarry([100, 50, 25]);
+console.log(summary); // {max : 100, min:25, avg:58.333....}
+
+function getSummarry(array){
+	this.max=array[0];
+	this.min=array[0];
+	this.sum=0;
+	for(const i of array){
+		this.sum+=i;
+		if(i>this.max) this.max=i;
+		if(i<this.min) this.min=i;
+	}
+	this.avg=this.sum/array.length;
+	return {max:this.max, min : this.min, sum : this.sum, avg:this.avg};
 }
 
 </script>
