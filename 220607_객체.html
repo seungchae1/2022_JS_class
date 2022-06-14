@@ -15,7 +15,6 @@
 
 	console.log(user.isMinor());
 	user.speakName(2);
-*/
 
 // user객체를 다시 정의
 // 메서드 정의시
@@ -38,5 +37,29 @@ let user={
 }
 	console.log(user.isMinor());
 	user.speakName(2);
+*/
+
+// 다음의 생성자 함수를 작성
+let p = new Point(2,3);
+console.log(p); // { x: 2, y: 3}
+
+let u = new User(1, "John", 20);
+console.log(u); // { id: 1, name: "John", age:20}
+
+function Point(x, y){
+	this.x=x;
+	this.y=y;
+}
+
+function User(id, name, age){
+	this.id=id;
+	this.name=name;
+	this.age=age;
+	//여기에 메서드 추가하는 코드 작성
+	this.isMinor= function(){
+		if(this.age<20) return true;
+		else return false;
+	}
+}
 
 </script>
